@@ -5,6 +5,7 @@ import queryString from "query-string";
 import { Pokemon } from "../models/Pokemon";
 
 export const DataSearchs = (history) => {
+    
     const location = useLocation();
 
     const { q = "" } = queryString.parse(location.search);

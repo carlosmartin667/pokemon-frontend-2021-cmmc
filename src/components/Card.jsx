@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { PokemonDatos } from "../models/DatoPokemon";
 
+const Card = ({ name, url }) => {
 
-const Card = ({ name, type, id, url }) => {
-  const path = `/assets/${type}-${id}.png`;
+    const {imgJuego} = PokemonDatos(url)
+    
+
   return (
     <>
       <div
@@ -14,12 +17,11 @@ const Card = ({ name, type, id, url }) => {
         }}
       >
         <img
- 
           loading="lazy"
           className="card-img-top"
           style={{ width: "100%" }}
-          src={path}
-          alt={id}
+          src={imgJuego}
+          alt={name}
           height="200"
         />
 
