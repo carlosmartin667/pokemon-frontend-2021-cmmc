@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-info">
+      <nav className="navbar navbar-expand-lg navbar-light bg-warning">
         <div className="container-fluid">
           <h2 className="navbar-brand">Pokemon</h2>
           <button

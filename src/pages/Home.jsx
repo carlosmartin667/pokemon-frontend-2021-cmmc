@@ -1,51 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../components/Card";
 import { PokemonDatos } from "../models/PokemonDatos";
 
 const Home = (props) => {
-  const { previous ,Next ,pokemonListaData, fetchDataLista } = PokemonDatos();
-  const personaje = pokemonListaData;
-  
+  const { previous, Next, pokemonListaData, fetchDataLista, count, UltimoRegistro } = PokemonDatos();
+
+
   return (
     <>
+
       <div className="container mt-3">
-        <div className="alert alert-info" role="alert">
-          pokemon 100
+        <div className="alert alert-warning" role="alert">
+          pokemon total : {count} 
         </div>
         <hr />
+        <div className="btn-toolbar row">
+          <div className="col-md-1">
+            <button
+              className="btn btn-warning  "
+              onClick={() => fetchDataLista('https://pokeapi.co/api/v2/pokemon')}
+            >
+              inicio
+            </button>
+          </div>
+          <div className="col-md-1">
+            <button
+              className="btn btn-warning   "
+              onClick={() => fetchDataLista(previous)}
+            >
+              atras
+            </button>
+          </div>
+          <div className="col-md-1">
+
+            <button
+              className="btn btn-warning  "
+              onClick={() => fetchDataLista(Next)}
+            >
+              siguiente
+            </button>
+          </div>
+
+          <div className="col-md-1">
+            <button
+              className="btn btn-warning"
+              onClick={() => fetchDataLista(UltimoRegistro)}
+            >
+              Ultimo
+            </button>
+          </div>
+
+
+        </div>
+
+
         <div className="row">
-          {personaje.map((man) => (
+          {pokemonListaData.map((man) => (
             <Card key={man.name} {...man} />
           ))}
         </div>
-        <nav aria-label="Page navigation example">
-          <ul className="pagination">
-            <li className="page-item">
-              <button
-                className="btn btn-info"
-                onClick={() => fetchDataLista(previous)}
-              >
-                atras
-              </button>
-            </li>
-            <li className="page-item">
-              <button
-                className="btn btn-info"
-                onClick={() => fetchDataLista('https://pokeapi.co/api/v2/pokemon')}
-              >
-                inicio
-              </button>
-            </li>
-            <li className="page-item">
-              <button
-                className="btn btn-info"
-                onClick={() => fetchDataLista(Next)}
-              >
-                siguiente
-              </button>
-            </li>
-          </ul>
-        </nav>
+
       </div>
     </>
   );

@@ -43,18 +43,15 @@ const Search = ({ history }) => {
             >
               <div className="card-header text-info">Resultado</div>
               <div className="card-body text-info ">
-                <h5 className="card-title">Cantidad: {characters.length}</h5>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <h5 className="card-title">Cantidad de Pokemon encontrados: {characters.length}</h5>
+                
               </div>
             </div>
           </div>
           <div className="col-12">
             {characters.length === 0 && (
               <div className="alert alert-warning text-center">
-                Introdusca un nombre correcto
+                Introdusca un nombre correcto Minimo 3 caracteres 
               </div>
             )}
           </div>

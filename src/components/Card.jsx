@@ -5,13 +5,13 @@ import { PokemonDatos } from "../models/DatoPokemon";
 
 const Card = ({ name, url }) => {
 
-    const {imgJuego} = PokemonDatos(url)
+  const pokemonData = PokemonDatos(url)
     
-
+  const { imgJuego ,id} = pokemonData;
   return (
     <>
       <div
-        className="card  bg-info m-3 "
+        className="card  bg-warning m-3 "
         style={{
           width: 170,
         }}
@@ -28,7 +28,7 @@ const Card = ({ name, url }) => {
         <div className="card-body">
           <h3 className="card-title">{name}</h3>
           <p className="card-text">
-            <Link className="card-link" to={`/detalles/${name}`}>
+            <Link className="card-link" to={`/detalles/${id}`} >
               Ver Más...
             </Link>
           </p>

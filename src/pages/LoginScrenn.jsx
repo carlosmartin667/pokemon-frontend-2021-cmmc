@@ -28,38 +28,42 @@ const LoginScrenn = ({ history }) => {
       </div>
 
       <div className="row justify-content-md-center ">
-        <div
-          className="card border-primary text-center"
-          style={{ maxWidth: "32rem" }}
-        >
-          <div className="row">
-            <div className="col-4">
+        <div className="card mb-3  bg" style={{ maxWidth: 540 }}>
+          <div className="row g-0 ">
+            <div className="col-md-4 mt-4">
               <img
+                loading="lazy"
+                className="card-img-top"
+                style={{ width: "100%" }}
                 src={imgJuego}
-                className="img-fluid rounded-start"
-                alt={imgJuego}
-                width="500"
-                height="400"
+                alt={nombre}
+                height="200"
               />
             </div>
-            <div className="col-8">
-              <h5 className="card-title">{nombre}</h5>
-              <p className="card-text">
-                {experiencia}, {hp}, {ataque}, {defensa}, {especial}
-              </p>
-              <h4 className="my-3">Vienvenido a pokedex con 100 pokemon</h4>
-
-              <button
-                type="button"
-                onClick={handleLogin}
-                className="btn btn-outline-primary my-3"
-              >
-                ENTRAR
-              </button>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h3 >{nombre}</h3>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">ataque : {ataque}</li>
+                  <li className="list-group-item">defensa : {defensa}</li>
+                  <li className="list-group-item">especial : {especial}</li>
+                  <li className="list-group-item">experiencia : {experiencia}</li>
+                  <li className="list-group-item">hp : {hp}</li>
+                </ul>
+              </div>
             </div>
           </div>
+          <button
+            type="button"
+            onClick={handleLogin}
+            className="btn btn-outline-primary my-3"
+          >
+            ENTRAR
+          </button>
         </div>
       </div>
+
+
     </>
   );
 };
