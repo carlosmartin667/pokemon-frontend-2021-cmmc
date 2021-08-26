@@ -4,4 +4,4 @@
  
  ejecucion npm start
  
- npm run deploy
+ deployar npm run deploy
