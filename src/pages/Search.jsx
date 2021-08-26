@@ -60,7 +60,7 @@ const Search = ({ history }) => {
           </div>
           <div className="row">
             {characters.map((character) => (
-              <Card key={character.id} {...character} />
+              <Card key={character.name} {...character} />
             ))}
           </div>
         </div>

@@ -7,18 +7,23 @@ import { Pokemon } from "../models/Pokemon";
 export const PokemonDatos = (start) => {
   const [pokemonListaData, setpokemonListadata] = useState([]);
 
-
+  const [previous, setPrevious] = useState('')
+  const [Next, setNext] = useState('')
   const fetchDataLista = async (start) => {
+    console.log(start);
     const res = await fetch(
-      ` https://pokeapi.co/api/v2/pokemon?offset=${start}&limit=10`
+      start
     );
     const data = await res.json();
+    setNext(data.next)
+    setPrevious(data.previous)
     setpokemonListadata(data.results);
+   
   };
 
   useEffect(() => {
-    fetchDataLista(1 );
+    fetchDataLista('https://pokeapi.co/api/v2/pokemon');
   }, [start]);
 
-  return { pokemonListaData , fetchDataLista};
+  return {Next, previous ,pokemonListaData , fetchDataLista};
 };

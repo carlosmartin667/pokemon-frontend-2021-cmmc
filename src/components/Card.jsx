@@ -11,7 +11,7 @@ const Card = ({ name, url }) => {
   return (
     <>
       <div
-        className="card  bg-info m-3 col-12 col-md-4"
+        className="card  bg-info m-3 "
         style={{
           width: 170,
         }}
