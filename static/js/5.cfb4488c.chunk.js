@@ -1,0 +1,2 @@
+(this["webpackJsonppokemon-frontend-2021-cmmc"]=this["webpackJsonppokemon-frontend-2021-cmmc"]||[]).push([[5],{43:function(n,e,a){"use strict";a.r(e);a(0);var c=a(1);e.default=function(){return Object(c.jsx)("nav",{className:"navbar navbar-dark text-center bg-warning mt-5 ",children:Object(c.jsx)("div",{className:"container-fluid ",children:Object(c.jsxs)("p",{className:"navbar-brand h1",children:[" ","carlos martin cornejo - \xa9 ",(new Date).getFullYear()," "]})})})}}}]);
+//# sourceMappingURL=5.cfb4488c.chunk.js.map
